@@ -1,0 +1,13 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+  {{ category.title|title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="mb-5">Загадки с категорией "{{ category.title|title }}":</h1>
+
+  {% for post in category.posts.all %}
+    {% include 'blog/includes/post_card.html' %}
+  {% endfor %}
+{% endblock %}

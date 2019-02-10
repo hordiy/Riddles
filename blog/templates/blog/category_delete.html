@@ -1,0 +1,15 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+  Удаление категории "{{ category.title|title }}" - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <form class="" action="{% url 'category_delete_url' slug=category.slug %}" method="post">
+    {% csrf_token %}
+
+    <h3>Вы уверены, что хотите удалить <b>"{{ category.title|title }}"</b> категорию?</h3>
+    <button type="submit" name="button" class="btn btn-danger">Удалить</button>
+    <a href="{{ category.get_absolute_url }}">Отмена</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+  Удаления загадки "{{ post.title }}" - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <form class="" action="{% url 'post_delete_url' slug=post.slug %}" method="post">
+    {% csrf_token %}
+
+    <h3>Вы уверены, что хотите удалить <b>{{ post.title }}</b> загадку?</h3>
+    <button type="submit" name="button" class="btn btn-danger">Удалить</button>
+    <a href="{{ post.get_absolute_url }}">Отмена</a>
+  </form>
+{% endblock %}
