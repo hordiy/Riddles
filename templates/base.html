@@ -11,12 +11,26 @@
   <title>{% block title %}ДаНетКи{% endblock %}</title>
 </head>
 <body>
+  <div id="header">
+      <a id="header-title" href="{% url 'posts_list_url' %}"><img id="logo" src="{% static 'css/img/logo.png' %}" alt="logo"></a>
+      <ul id="header-nav">
+        <li><a href="{% url 'posts_list_url' %}">ДаНетКи</a></li>
+        <li><a href="{% url 'categories_list_url' %}">Категории</a></li>
+        <li>
+          <form class="form-inline my-2 my-lg-0" action="{% url 'posts_list_url' %}">
+          <input class="form-control mr-sm-2" type="search" placeholder="Введите в поиск" aria-label="Search" name="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
+          </form>
+        </li>
+      </ul>
+  </div>
+
+<!--
   <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'posts_list_url' %}">ДаНетКи</a>
+    <a class="navbar-brand" href="{% url 'posts_list_url' %}"><img src="{% static 'css/img/logo.png' %}" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -32,16 +46,33 @@
       </form>
     </div>
   </nav>
-
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-6 offset-md-2">
-        {% block content %}
-        There is not any content for you
-        {% endblock %}
+-->
+  <div id="content">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-6 offset-md-2">
+          {% block content %}
+          There is not any content for you
+          {% endblock %}
+        </div>
       </div>
     </div>
   </div>
 
+  <div id="footer">
+    <div class="container">
+      <div class="column">
+        <h4>Ссылки</h4>
+        <p>
+          <a href="https://telegram.org/vlad_hordiienko/">Telegram</a>
+          <a href="https://vk.com/id77605349">Vkontakte</a>
+        </p>
+      </div>
+      <div class="column">
+        <h4>Обо мне</h4>
+        <p>Всем привет! Этот сайт для тех кто любит загадки!</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

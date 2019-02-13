@@ -1,3 +1,93 @@
 body {
-  background-image: url("img/image2.png")
+  background-image: url("img/bg.jpeg")
+}
+
+#logo {
+  display: block;
+  height: 120px;
+  weight: 120px;
+  float: left;
+  padding-bottom: 25px;
+}
+
+#header {
+  background-color: #2f2f2f;
+  height: 90px;
+  line-height: 100px;
+}
+
+#header a {
+  color: white;
+  text-decoration: none;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#header a:hover {
+  color: red;
+}
+
+#header-nav {
+  display: block;
+  margin-right: 10px;
+}
+
+#header li {
+  display: inline;
+  padding-left: 25px;
+}
+
+form {
+  float: right;
+  padding-top: 30px;
+}
+
+#content {
+  margin-bottom: 100px;
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+  font-family: 'Lobster';
+}
+
+p {
+  line-height: 1.5;
+  font-family: Times New Roman;
+}
+
+.container {
+  margin-right: 20px;
+  margin-bottom: 60px;
+}
+
+#footer {
+  background-color: #2f2f2f;
+  padding-bottom: 1px;
+}
+
+.column {
+  min-width: 300px;
+  display: inline-block;
+}
+
+#footer h4 {
+  color: white;
+  
+  letter-spacing: 0.1em;
+  padding-top: 30px;
+}
+
+#footer p {
+  color: white;
+}
+
+a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
 }
